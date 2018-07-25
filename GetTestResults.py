@@ -76,7 +76,7 @@ def get_test_results(build_num):
 
 
 def main():
-    results = get_test_results(get_build_num())
+    results = get_test_results(3328)
     conn = sqlite3.connect('test_results')
     c = conn.cursor()
     c.execute('SELECT * FROM results where build_number = {}' .format(build_number))
