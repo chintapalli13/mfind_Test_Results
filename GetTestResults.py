@@ -50,11 +50,10 @@ def get_test_jira_id(testcase_name):
         return jira_id
 
 def process_test_class_names(class_names):
-    tn = class_names
-    l = list(set(tn))
-    r = re.compile(".*mFindUITests")
-    newlist = list(filter(r.match, l))
-    return newlist
+    class_name_list_set = list(set(class_names))
+    regex_text = re.compile(".*mFindUITests")
+    filtered_class_names = list(filter(regex_text.match, class_name_list_set))
+    return filtered_class_names
 
 def get_test_results(build_num):
     test_meta_data = get_test_meta_data(build_num)
